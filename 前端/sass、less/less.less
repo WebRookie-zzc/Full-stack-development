@@ -1,0 +1,10 @@
+@count: 3;
+
+.get(@cn) when (@cn < 3){
+    .box-@{cn} {
+        width: 100px + @cn;
+    }
+    .get(@cn+1);
+}
+
+.get(0);
