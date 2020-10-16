@@ -7,6 +7,6 @@ public class Person {
     public void walk() {}
 }
 
-static class Students extends Person{
+class Students extends Person{
     public void Study() {}
 }

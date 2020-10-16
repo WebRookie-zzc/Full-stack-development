@@ -1,0 +1,90 @@
+@import '../../CSS/reset.css';
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include flex;
+}
+
+.wrapper {
+    width: 350px;
+    height: 500px;
+    background-color: #f40;
+    position: relative;
+    margin-top: 100px;
+    padding: 20px;
+    .cup {
+        position: absolute;
+        left: 30px;
+        top: -20px;
+    }
+    .top {
+        width: 100%;
+        height: 90px;
+    }
+    .title,
+    .number {
+        position: absolute;
+        color: #fff;
+        font-size: 20px;
+    }
+    .title {
+        right: 10px;
+    }
+    .number {
+        right: 10px;
+        top: 50px;
+        font-size: 40px;
+    }
+    .top-title {
+        @include flex;
+        padding-bottom: 10px;
+        width: 100%;
+        div {
+            width: 33.33%;
+            text-align: center;
+            background-color: #ddd;
+            font: {
+                size: 18px;
+                weight: bold;
+            }
+        }
+    }
+    .user-wrapper {
+        overflow: hidden;
+        width: 100%;
+        background-color: #eee;
+        height: 340px;
+        .table {
+            .user {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                height: 20px;
+                line-height: 30px;
+                :nth-child(2) {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                font: {
+                    size: 16px;
+                    weight: bold;
+                }
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+}
